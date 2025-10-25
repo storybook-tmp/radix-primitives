@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Collapsible } from 'radix-ui';
 import styles from './collapsible.stories.module.css';
 
-export default { title: 'Components/Collapsible' };
+export default { title: 'Components/Collapsible', component: Collapsible };
 
 export const Styled = () => (
   <Collapsible.Root className={styles.root}>

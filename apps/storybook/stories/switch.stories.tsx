@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Label as LabelPrimitive, Switch } from 'radix-ui';
 import styles from './switch.stories.module.css';
 
-export default { title: 'Components/Switch' };
+export default { title: 'Components/Switch', component: Switch };
 
 export const Styled = () => (
   <>

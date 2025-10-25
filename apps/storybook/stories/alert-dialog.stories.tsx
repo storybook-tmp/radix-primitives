@@ -2,7 +2,7 @@ import * as React from 'react';
 import { AlertDialog } from 'radix-ui';
 import styles from './alert-dialog.stories.module.css';
 
-export default { title: 'Components/AlertDialog' };
+export default { title: 'Components/AlertDialog', component: AlertDialog };
 
 export const Styled = () => (
   <AlertDialog.Root>

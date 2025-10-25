@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Portal } from 'radix-ui';
 
-export default { title: 'Utilities/Portal' };
+export default { title: 'Utilities/Portal', component: Portal };
 
 export const Base = () => (
   <div

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Form } from 'radix-ui';
 import styles from './form.stories.module.css';
 
-export default { title: 'Components/Form' };
+export default { title: 'Components/Form', component: Form };
 
 export const Basic = () => {
   const [loading, setLoading] = React.useState(false);

@@ -3,7 +3,7 @@ import { Collection as CollectionPrimitive } from 'radix-ui/internal';
 
 const { createCollection } = CollectionPrimitive;
 
-export default { title: 'Utilities/Collection' };
+export default { title: 'Utilities/Collection', component: CollectionPrimitive };
 
 export const Basic = () => (
   <List>

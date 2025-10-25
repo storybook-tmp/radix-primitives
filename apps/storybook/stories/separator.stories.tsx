@@ -1,7 +1,7 @@
 import { Separator } from 'radix-ui';
 import styles from './separator.stories.module.css';
 
-export default { title: 'Components/Separator' };
+export default { title: 'Components/Separator', component: Separator };
 
 export const Styled = () => (
   <>

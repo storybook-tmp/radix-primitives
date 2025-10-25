@@ -1,7 +1,7 @@
 import { Direction, Tabs } from 'radix-ui';
 import styles from './tabs.stories.module.css';
 
-export default { title: 'Components/Tabs' };
+export default { title: 'Components/Tabs', component: Tabs };
 
 const animatedContentClass = [styles.content, styles.animatedContent].join(' ');
 

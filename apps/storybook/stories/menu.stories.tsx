@@ -6,6 +6,7 @@ import styles from './menu.stories.module.css';
 
 export default {
   title: 'Utilities/Menu',
+  component: Menu,
   excludeStories: ['TickIcon', 'classes'],
 };
 

@@ -5,7 +5,7 @@ import styles from './menubar.stories.module.css';
 
 const subTriggerClass = [styles.item, styles.subTrigger].join(' ');
 
-export default { title: 'Components/Menubar' };
+export default { title: 'Components/Menubar', component: Menubar };
 
 export const Styled = () => {
   const [loop, setLoop] = React.useState(false);

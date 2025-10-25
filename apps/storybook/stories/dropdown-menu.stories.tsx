@@ -7,7 +7,7 @@ import styles from './dropdown-menu.stories.module.css';
 
 const { SIDE_OPTIONS, ALIGN_OPTIONS } = Popper;
 
-export default { title: 'Components/DropdownMenu' };
+export default { title: 'Components/DropdownMenu', component: DropdownMenu };
 
 const subTriggerClass = [styles.item, styles.subTrigger].join(' ');
 

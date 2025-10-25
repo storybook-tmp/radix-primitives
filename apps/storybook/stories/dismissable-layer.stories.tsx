@@ -15,7 +15,7 @@ const FocusScope = FocusScopePrimitive.Root;
 type DismissableLayerProps = React.ComponentProps<typeof DismissableLayer>;
 type FocusScopeProps = React.ComponentProps<typeof FocusScope>;
 
-export default { title: 'Utilities/DismissableLayer' };
+export default { title: 'Utilities/DismissableLayer', component: DismissableLayerPrimitive };
 
 const SYSTEM_FONT =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';

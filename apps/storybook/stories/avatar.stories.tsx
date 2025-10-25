@@ -2,7 +2,7 @@ import { Avatar } from 'radix-ui';
 import styles from './avatar.stories.module.css';
 import React from 'react';
 
-export default { title: 'Components/Avatar' };
+export default { title: 'Components/Avatar', component: Avatar };
 
 const src = 'https://picsum.photos/id/1005/400/400';
 const srcAlternative = 'https://picsum.photos/id/1006/400/400';

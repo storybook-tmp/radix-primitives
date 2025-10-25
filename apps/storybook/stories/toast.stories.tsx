@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Dialog, Toast } from 'radix-ui';
 import styles from './toast.stories.module.css';
 
-export default { title: 'Components/Toast' };
+export default { title: 'Components/Toast', component: Toast };
 
 export const Styled = () => (
   <Toast.Provider>

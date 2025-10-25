@@ -3,7 +3,7 @@ import { Portal } from 'radix-ui';
 import { Popper } from 'radix-ui/internal';
 import styles from './popper.stories.module.css';
 
-export default { title: 'Utilities/Popper' };
+export default { title: 'Utilities/Popper', component: Popper };
 
 export const Styled = () => {
   const [open, setOpen] = React.useState(false);

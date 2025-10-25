@@ -5,7 +5,7 @@ import styles from './tooltip.stories.module.css';
 
 const { SIDE_OPTIONS, ALIGN_OPTIONS } = Popper;
 
-export default { title: 'Components/Tooltip' };
+export default { title: 'Components/Tooltip', component: Tooltip };
 
 export const Styled = () => (
   <Tooltip.Provider>

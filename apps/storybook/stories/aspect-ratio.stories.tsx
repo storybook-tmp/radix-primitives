@@ -1,7 +1,7 @@
 import { AspectRatio } from 'radix-ui';
 import styles from './aspect-ratio.stories.module.css';
 
-export default { title: 'Components/AspectRatio' };
+export default { title: 'Components/AspectRatio', component: AspectRatio };
 
 const image = (
   <img

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Direction, ScrollArea } from 'radix-ui';
 import styles from './scroll-area.stories.module.css';
 
-export default { title: 'Components/ScrollArea' };
+export default { title: 'Components/ScrollArea', component: ScrollArea };
 
 export const Basic = () => {
   const [props, setProps] = React.useState({} as any);

@@ -1,6 +1,6 @@
 import { AccessibleIcon } from 'radix-ui';
 
-export default { title: 'Utilities/AccessibleIcon' };
+export default { title: 'Utilities/AccessibleIcon', component: AccessibleIcon };
 
 export const Styled = () => (
   <button type="button">

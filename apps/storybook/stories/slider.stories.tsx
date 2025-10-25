@@ -3,7 +3,7 @@ import { Direction, Slider } from 'radix-ui';
 import serialize from 'form-serialize';
 import styles from './slider.stories.module.css';
 
-export default { title: 'Components/Slider' };
+export default { title: 'Components/Slider', component: Slider };
 
 export const Styled = () => (
   <Slider.Root className={styles.root}>

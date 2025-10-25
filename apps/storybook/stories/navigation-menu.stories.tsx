@@ -2,7 +2,7 @@ import * as React from 'react';
 import { NavigationMenu, Direction } from 'radix-ui';
 import styles from './navigation-menu.stories.module.css';
 
-export default { title: 'Components/NavigationMenu' };
+export default { title: 'Components/NavigationMenu', component: NavigationMenu };
 
 export const Basic = () => {
   return (

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Presence } from 'radix-ui/internal';
 import styles from './presence.stories.module.css';
 
-export default { title: 'Utilities/Presence' };
+export default { title: 'Utilities/Presence', component: Presence };
 
 export const Basic = () => {
   const [open, setOpen] = React.useState(true);

@@ -1,6 +1,6 @@
 import { Arrow } from 'radix-ui/internal';
 
-export default { title: 'Utilities/Arrow' };
+export default { title: 'Utilities/Arrow', component: Arrow };
 
 const RECOMMENDED_CSS__ARROW__ROOT = {
   // better default alignment

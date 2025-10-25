@@ -3,7 +3,7 @@ import styles from './label.stories.module.css';
 
 const Label = LabelPrimitive.Root;
 
-export default { title: 'Components/Label' };
+export default { title: 'Components/Label', component: LabelPrimitive };
 
 export const Styled = () => <Label className={styles.root}>Label</Label>;
 

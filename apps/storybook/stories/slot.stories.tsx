@@ -4,7 +4,7 @@ import { Slot as SlotPrimitive } from 'radix-ui';
 const Slot = SlotPrimitive.Root;
 const Slottable = SlotPrimitive.Slottable;
 
-export default { title: 'Utilities/Slot' };
+export default { title: 'Utilities/Slot', component: SlotPrimitive };
 
 export const WithoutSlottable = () => (
   <SlotWithoutSlottable>

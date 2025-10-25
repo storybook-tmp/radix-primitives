@@ -4,6 +4,7 @@ import styles from './progress.stories.module.css';
 
 export default {
   title: 'Components/Progress',
+  component: Progress,
 };
 
 export const Styled = () => {

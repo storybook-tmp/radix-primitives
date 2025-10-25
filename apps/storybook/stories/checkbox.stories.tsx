@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Checkbox, Label as LabelPrimitive } from 'radix-ui';
 import styles from './checkbox.stories.module.css';
 
-export default { title: 'Components/Checkbox' };
+export default { title: 'Components/Checkbox', component: Checkbox };
 
 export const Styled = () => (
   <>

@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Accordion } from 'radix-ui';
 import styles from './accordion.stories.module.css';
 
-export default { title: 'Components/Accordion' };
+export default { title: 'Components/Accordion', component: Accordion };
 
 export const Single = () => {
   const [valueOne, setValueOne] = React.useState('one');

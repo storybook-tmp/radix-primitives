@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Toggle } from 'radix-ui';
 import styles from './toggle.stories.module.css';
 
-export default { title: 'Components/Toggle' };
+export default { title: 'Components/Toggle', component: Toggle };
 
 export const Styled = () => <Toggle.Root className={styles.root}>Toggle</Toggle.Root>;
 

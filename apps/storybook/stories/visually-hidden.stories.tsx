@@ -1,6 +1,6 @@
 import { VisuallyHidden } from 'radix-ui';
 
-export default { title: 'Utilities/VisuallyHidden' };
+export default { title: 'Utilities/VisuallyHidden', component: VisuallyHidden };
 
 export const Basic = () => (
   <button>

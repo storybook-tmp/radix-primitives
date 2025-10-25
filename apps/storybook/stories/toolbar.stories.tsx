@@ -1,7 +1,7 @@
 import { Direction, DropdownMenu, Toggle, Toolbar } from 'radix-ui';
 import styles from './toolbar.stories.module.css';
 
-export default { title: 'Components/Toolbar' };
+export default { title: 'Components/Toolbar', component: Toolbar };
 
 export const Styled = () => (
   <>

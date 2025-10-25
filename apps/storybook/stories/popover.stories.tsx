@@ -5,7 +5,7 @@ import styles from './popover.stories.module.css';
 
 const { SIDE_OPTIONS, ALIGN_OPTIONS } = Popper;
 
-export default { title: 'Components/Popover' };
+export default { title: 'Components/Popover', component: Popover };
 
 export const Styled = () => {
   return (

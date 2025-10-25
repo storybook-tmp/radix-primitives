@@ -5,7 +5,7 @@ import styles from './select.stories.module.css';
 
 const Label = LabelPrimitive.Root;
 
-export default { title: 'Components/Select' };
+export default { title: 'Components/Select', component: Select };
 
 const scrollUpButtonClass = [styles.scrollUpButton, styles.scrollButton].join(' ');
 const scrollDownButtonClass = [styles.scrollDownButton, styles.scrollButton].join(' ');

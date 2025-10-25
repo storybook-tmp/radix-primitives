@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Direction, Label as LabelPrimitive, RadioGroup } from 'radix-ui';
 import styles from './radio-group.stories.module.css';
 
-export default { title: 'Components/RadioGroup' };
+export default { title: 'Components/RadioGroup', component: RadioGroup };
 
 export const LegacyStyled = () => (
   <Label>

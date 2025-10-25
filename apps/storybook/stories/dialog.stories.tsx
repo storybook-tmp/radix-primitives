@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Dialog } from 'radix-ui';
 import styles from './dialog.stories.module.css';
 
-export default { title: 'Components/Dialog' };
+export default { title: 'Components/Dialog', component: Dialog };
 
 export const Styled = () => (
   <Dialog.Root>

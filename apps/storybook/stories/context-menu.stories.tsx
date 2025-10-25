@@ -3,7 +3,7 @@ import { ContextMenu } from 'radix-ui';
 import { foodGroups } from '@repo/test-data/foods';
 import styles from './context-menu.stories.module.css';
 
-export default { title: 'Components/ContextMenu' };
+export default { title: 'Components/ContextMenu', component: ContextMenu };
 
 export const Styled = () => (
   <div

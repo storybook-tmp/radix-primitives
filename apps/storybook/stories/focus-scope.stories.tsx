@@ -1,7 +1,7 @@
 import React from 'react';
 import { FocusScope } from 'radix-ui/internal';
 
-export default { title: 'Utilities/FocusScope' };
+export default { title: 'Utilities/FocusScope', component: FocusScope };
 
 export const Basic = () => {
   const [trapped, setTrapped] = React.useState(false);

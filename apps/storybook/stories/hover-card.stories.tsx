@@ -5,7 +5,7 @@ import styles from './hover-card.stories.module.css';
 
 const { SIDE_OPTIONS, ALIGN_OPTIONS } = Popper;
 
-export default { title: 'Components/HoverCard' };
+export default { title: 'Components/HoverCard', component: HoverCard };
 
 const contentClass = ({ animated }: { animated?: boolean }) =>
   [
