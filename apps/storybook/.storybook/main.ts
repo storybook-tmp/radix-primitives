@@ -1,4 +1,4 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
+import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
   stories: [
@@ -6,15 +6,9 @@ const config: StorybookConfig = {
     '../stories/**/*.mdx',
     '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
-  addons: [
-    //
-    '@storybook/addon-essentials',
-    '@storybook/addon-storysource',
-    '@storybook/addon-webpack5-compiler-swc',
-    // '@chromatic-com/storybook',
-  ],
+  addons: ['@storybook/addon-docs'],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-vite',
     options: {
       builder: {},
       // enable React strict mode

@@ -1,3 +1,6 @@
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
+import storybook from "eslint-plugin-storybook";
+
 // @ts-check
 import * as react from '@chance/eslint/react';
 import * as js from '@chance/eslint';
@@ -33,4 +36,5 @@ export default [
       'prefer-const': ['warn', { destructuring: 'all' }],
     },
   },
+  ...storybook.configs["flat/recommended"]
 ];

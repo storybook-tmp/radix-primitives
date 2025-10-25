@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { useArgs } from '@storybook/preview-api';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { useArgs } from 'storybook/preview-api';
 import { unstable_PasswordToggleField as PasswordToggleField } from 'radix-ui';
 import styles from './password-toggle-field.stories.module.css';
 
