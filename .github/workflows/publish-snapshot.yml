@@ -6,10 +6,17 @@ on:
       - main
     paths-ignore:
       # - '.github/**'
-      - '**/package.json'
+      - './package.json'
+      - './changeset/**/*'
+      - '/apps/**/*'
+      - '/internal/**/*'
+      - '/cypress/**/*'
+      - '**/*.test.ts'
+      - '**/*.test.tsx'
 
 env:
-  NPM_TOKEN: ${{ secrets.NPM_AUTOMATION_FROM_CHANCE }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 

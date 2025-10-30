@@ -13,7 +13,6 @@ const preview: Preview = {
 
     // disables Chromatic on a global level
     chromatic: { disable: true },
-
     docs: {
       codePanel: true,
     },

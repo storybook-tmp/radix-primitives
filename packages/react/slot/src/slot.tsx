@@ -1,18 +1,52 @@
 import * as React from 'react';
 import { composeRefs } from '@radix-ui/react-compose-refs';
 
+declare module 'react' {
+  interface ReactElement {
+    $$typeof?: symbol | string;
+  }
+}
+
+const REACT_LAZY_TYPE = Symbol.for('react.lazy');
+
+interface LazyReactElement extends React.ReactElement {
+  $$typeof: typeof REACT_LAZY_TYPE;
+  _payload: PromiseLike<Exclude<React.ReactNode, PromiseLike<any>>>;
+}
+
 /* -------------------------------------------------------------------------------------------------
  * Slot
  * -----------------------------------------------------------------------------------------------*/
+
+export type Usable<T> = PromiseLike<T> | React.Context<T>;
+const use: typeof React.use | undefined = (React as any)[' use '.trim().toString()];
 
 interface SlotProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
+function isPromiseLike(value: unknown): value is PromiseLike<unknown> {
+  return typeof value === 'object' && value !== null && 'then' in value;
+}
+
+function isLazyComponent(element: React.ReactNode): element is LazyReactElement {
+  return (
+    element != null &&
+    typeof element === 'object' &&
+    '$$typeof' in element &&
+    element.$$typeof === REACT_LAZY_TYPE &&
+    '_payload' in element &&
+    isPromiseLike(element._payload)
+  );
+}
+
 /* @__NO_SIDE_EFFECTS__ */ export function createSlot(ownerName: string) {
   const SlotClone = createSlotClone(ownerName);
   const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
+    let { children, ...slotProps } = props;
+    if (isLazyComponent(children) && typeof use === 'function') {
+      children = use(children._payload);
+    }
     const childrenArray = React.Children.toArray(children);
     const slottable = childrenArray.find(isSlottable);
 
@@ -65,7 +99,10 @@ interface SlotCloneProps {
 
 /* @__NO_SIDE_EFFECTS__ */ function createSlotClone(ownerName: string) {
   const SlotClone = React.forwardRef<any, SlotCloneProps>((props, forwardedRef) => {
-    const { children, ...slotProps } = props;
+    let { children, ...slotProps } = props;
+    if (isLazyComponent(children) && typeof use === 'function') {
+      children = use(children._payload);
+    }
 
     if (React.isValidElement(children)) {
       const childrenRef = getElementRef(children);
@@ -114,7 +151,7 @@ const Slottable = createSlottable('Slottable');
 type AnyProps = Record<string, any>;
 
 function isSlottable(
-  child: React.ReactNode
+  child: React.ReactNode,
 ): child is React.ReactElement<SlottableProps, typeof Slottable> {
   return (
     React.isValidElement(child) &&

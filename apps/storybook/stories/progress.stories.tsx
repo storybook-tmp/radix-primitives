@@ -95,7 +95,7 @@ function useProgressValueState(initialState: ProgressValue | (() => ProgressValu
 
 function useIndeterminateToggle(
   value: ProgressValue,
-  setValue: React.Dispatch<React.SetStateAction<ProgressValue>>
+  setValue: React.Dispatch<React.SetStateAction<ProgressValue>>,
 ) {
   const previousValueRef = usePreviousValueRef(value);
   const toggleIndeterminate = React.useCallback(
@@ -107,7 +107,7 @@ function useIndeterminateToggle(
         return null;
       });
     },
-    [previousValueRef, setValue]
+    [previousValueRef, setValue],
   );
   return toggleIndeterminate;
 }

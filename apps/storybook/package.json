@@ -7,6 +7,7 @@
     "lint": "eslint --max-warnings 0 .",
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
+    "serve": "serve storybook-static -l 6006",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -14,8 +15,8 @@
     "@repo/test-data": "workspace:*",
     "form-serialize": "^0.7.2",
     "radix-ui": "workspace:*",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-remove-scroll": "^2.6.3"
   },
   "devDependencies": {
@@ -23,18 +24,19 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@storybook/react-vite": "0.0.0-pr-32813-sha-13a2dbef",
-    "@types/form-serialize": "^0",
-    "@types/react": "^19.0.7",
-    "@types/react-dom": "^19.0.3",
-    "eslint": "^9.18.0",
-    "storybook": "0.0.0-pr-32813-sha-13a2dbef",
-    "typescript": "^5.7.3",
-    "eslint-plugin-storybook": "0.0.0-pr-32813-sha-13a2dbef",
     "@storybook/addon-docs": "0.0.0-pr-32813-sha-13a2dbef",
     "@storybook/addon-vitest": "0.0.0-pr-32813-sha-13a2dbef",
     "@storybook/addon-mcp": "^0.0.9",
-    "vite": "^7.1.12",
-    "@vitejs/plugin-react": "^5.1.0"
+    "@types/form-serialize": "^0",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^9.38.0",
+    "serve": "^14.2.5",
+    "storybook": "0.0.0-pr-32813-sha-13a2dbef",
+    "typescript": "^5.9.3",
+    "eslint-plugin-storybook": "0.0.0-pr-32813-sha-13a2dbef",
+    "vite": "^7.1.12"
   },
   "eslintConfig": {
     "extends": [

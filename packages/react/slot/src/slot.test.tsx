@@ -14,7 +14,7 @@ describe('given a slotted Trigger', () => {
       render(
         <Trigger as={Slot} onClick={handleClick}>
           <button type="button">Click me</button>
-        </Trigger>
+        </Trigger>,
       );
       fireEvent.click(screen.getByRole('button'));
     });
@@ -34,7 +34,7 @@ describe('given a slotted Trigger', () => {
           <button type="button" onClick={handleClick}>
             Click me
           </button>
-        </Trigger>
+        </Trigger>,
       );
       fireEvent.click(screen.getByRole('button'));
     });
@@ -56,7 +56,7 @@ describe('given a slotted Trigger', () => {
           <button type="button" onClick={handleChildClick}>
             Click me
           </button>
-        </Trigger>
+        </Trigger>,
       );
       fireEvent.click(screen.getByRole('button'));
     });
@@ -80,7 +80,7 @@ describe('given a slotted Trigger', () => {
           <button type="button" onClick={undefined}>
             Click me
           </button>
-        </Trigger>
+        </Trigger>,
       );
       fireEvent.click(screen.getByRole('button'));
     });
@@ -100,7 +100,7 @@ describe('given a slotted Trigger', () => {
           <button type="button" onClick={handleChildClick}>
             Click me
           </button>
-        </Trigger>
+        </Trigger>,
       );
       fireEvent.click(screen.getByRole('button'));
     });
@@ -118,7 +118,7 @@ describe('given a Button with Slottable', () => {
       const tree = render(
         <Button iconLeft={<span>left</span>} iconRight={<span>right</span>}>
           Button <em>text</em>
-        </Button>
+        </Button>,
       );
 
       expect(tree.container).toMatchSnapshot();
@@ -132,7 +132,7 @@ describe('given a Button with Slottable', () => {
           <a href="https://radix-ui.com">
             Button <em>text</em>
           </a>
-        </Button>
+        </Button>,
       );
 
       expect(tree.container).toMatchSnapshot();
@@ -164,10 +164,69 @@ describe.skip('given an Input', () => {
       render(
         <Input asChild ref={handleRef}>
           <input />
-        </Input>
+        </Input>,
       );
       await userEvent.type(screen.getByRole('textbox'), 'foo');
       expect(handleRef).toHaveBeenCalledTimes(1);
+    });
+  });
+});
+
+describe('given a Slot with React lazy components', () => {
+  afterEach(cleanup);
+
+  describe('with a lazy component as child', () => {
+    const LazyButton = React.lazy(() =>
+      Promise.resolve({
+        default: ({ children, ...props }: React.ComponentProps<'button'>) => (
+          <button {...props}>{children}</button>
+        ),
+      }),
+    );
+
+    it('should render the lazy component correctly', async () => {
+      const handleClick = vi.fn();
+
+      render(
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Slot onClick={handleClick}>
+            <LazyButton>Click me</LazyButton>
+          </Slot>
+        </React.Suspense>,
+      );
+
+      // Wait for lazy component to load
+      await screen.findByRole('button');
+
+      fireEvent.click(screen.getByRole('button'));
+      expect(handleClick).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('with a lazy component in Button with Slottable', () => {
+    const LazyLink = React.lazy(() =>
+      Promise.resolve({
+        default: ({ children, ...props }: React.ComponentProps<'a'>) => (
+          <a {...props}>{children}</a>
+        ),
+      }),
+    );
+
+    it('should render a lazy link with icon on the left/right', async () => {
+      const tree = render(
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Button iconLeft={<span>left</span>} iconRight={<span>right</span>} asChild>
+            <LazyLink href="https://radix-ui.com">
+              Button <em>text</em>
+            </LazyLink>
+          </Button>
+        </React.Suspense>,
+      );
+
+      // Wait for lazy component to load
+      await screen.findByRole('link');
+
+      expect(tree.container).toMatchSnapshot();
     });
   });
 });

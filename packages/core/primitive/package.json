@@ -30,6 +30,7 @@
   "scripts": {
     "lint": "eslint --max-warnings 0 src",
     "clean": "rm -rf dist",
+    "reset": "rm -rf dist node_modules",
     "typecheck": "tsc --noEmit",
     "build": "radix-build"
   },
@@ -37,8 +38,8 @@
     "@repo/builder": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "eslint": "^9.18.0",
-    "typescript": "^5.7.3"
+    "eslint": "^9.38.0",
+    "typescript": "^5.9.3"
   },
   "homepage": "https://radix-ui.com/primitives",
   "repository": {
