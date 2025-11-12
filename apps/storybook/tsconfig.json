@@ -1,4 +1,11 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
-  "include": ["stories", "index.d.ts"]
+  "include": ["stories", "index.d.ts"],
+  "compilerOptions": {
+    "paths": {
+      "radix-ui": ["../../packages/react/radix-ui/src/index.ts"],
+      "radix-ui/internal": ["../../packages/react/radix-ui/src/internal.ts"],
+      "@radix-ui/react-accessible-icon": ["../../packages/react/accessible-icon/src/index.ts"],
+    }
+  }
 }
